@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import AppRouter from './routers/AppRouter';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 function App() {
+  const [isAuth, setIsAuth] = useState(null)
+  const auth = getAuth();
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      setIsAuth(user)
+    } else {
+      setIsAuth(null)
+    }
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className='app'>
+        <AppRouter isAuth={isAuth} />
+    </section>
   );
 }
 
