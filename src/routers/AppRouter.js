@@ -14,4 +14,4 @@ const AppRouter = ({isAuth}) => {
   )
 }
 
-export default AppRouter
+export default AppRouter;
