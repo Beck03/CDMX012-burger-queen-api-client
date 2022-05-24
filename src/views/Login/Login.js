@@ -1,6 +1,5 @@
 import { useState } from "react";
 import burgerQueen from './images/burgerQueen.svg'
-//import { Logo } from "../../Components/Logo/Logo";
 import eye from './images/eye.svg';
 import '../Login/Login.css';
 
@@ -8,6 +7,7 @@ const Login = ({ signIn }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [visible, setVisible] = useState('password')
+  const [message, setMessage] = useState('')
 
   const handleEmail = e => {
     setEmail(e.target.value)
@@ -20,6 +20,25 @@ const Login = ({ signIn }) => {
       setVisible('text')
     } else if (visible === 'text') {
       setVisible('password')
+    }
+  }
+  const access = async () => {
+    const response = await signIn(email, password);
+    if (response && response.hasOwnProperty('code')) {
+      console.log(response.code)
+      switch (response.code) {
+        case "auth/invalid-email":
+          setMessage("El correo es inválido.");
+          break;
+        case "auth/user-not-found":
+          setMessage("El correo no está registrado");
+          break;
+        case "auth/wrong-password":
+          setMessage("La contraseña es inválida");
+          break;
+        default:
+          setMessage(response.code);
+      }
     }
   }
 
@@ -53,9 +72,12 @@ const Login = ({ signIn }) => {
           onClick={handleEyeIcon}
         />
       </button>
+      <p>
+        <b>{message}</b>
+      </p>
       <button
         id='getInto'
-        onClick={() => signIn(email, password)}>
+        onClick={access}>
         Ingresar
       </button>
     </section>
