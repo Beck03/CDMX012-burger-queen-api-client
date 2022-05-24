@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Manager from '../views/Home/Manager';
+// import Manager from '../views/Home/Manager';
+import HomeAdm from '../views/Administrator/homeAdm/HomeAdm'
 import Waiter from '../views/Home/Waiter';
 import Chef from '../views/Home/Chef';
 import { auth, logOut } from '../lib/firebaseAuth.js'
@@ -26,7 +27,8 @@ const PrivateRoutes = () => {
   if (role === 'gerente') {
     return (
       <Routes>
-        <Route path='/' element={<Manager logOut={logOut} />} />
+        {/* <Route path='/' element={<Manager logOut={logOut} />} /> */}
+        <Route path='/' element={<HomeAdm logOut={logOut} />} />
       </Routes>
     )
   } else if (role === 'mesero') {

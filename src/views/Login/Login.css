@@ -61,7 +61,7 @@ h4{
     font-size: 35px;
 }
 input{
-    font-size: large;
+    font-size: x-large;
 }
 ::placeholder{
     font-size: 1.5em;
@@ -70,4 +70,13 @@ input{
     position: relative;
     top: 14%;
     left: 28%;
+}
+p {
+    position: absolute;
+    width: 50%;
+    height: 3%;
+    left: 28%;
+    top: 72%;
+    font-size: x-large;
+    color: rgb(119, 9, 9);
 }

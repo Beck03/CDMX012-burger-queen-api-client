@@ -1,8 +1,8 @@
-import { Logo } from "../../../Components/Logo/Logo";
+import { Logo } from "../../../components/Logo/Logo";
 import '../homeAdm/homeAdm.css';
 import { useNavigate } from "react-router-dom";
 
-export const HomeAdm = () => {
+const HomeAdm = ({logOut}) => {
     const navigate = useNavigate();
 
     const partners = () =>{
@@ -12,8 +12,10 @@ export const HomeAdm = () => {
     return(
         <section className='homeAdm'>
             <Logo/>
-             <button id='btnProducts'>Productos</button>
+             <button id='btnProducts' onClick={logOut}>Productos</button>
              <button id='btnAssociates' onClick={partners}>Asociados</button>
         </section>
     );
 }
+
+export default HomeAdm;
