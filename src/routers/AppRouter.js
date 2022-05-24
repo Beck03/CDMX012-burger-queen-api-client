@@ -2,7 +2,6 @@ import PrivateRoutes from "./PrivateRoutes"
 import PublicRoutes  from "./PublicRoutes"
 
 const AppRouter = ({isAuth}) => {
-
   return (
     <>
       {
@@ -14,4 +13,4 @@ const AppRouter = ({isAuth}) => {
   )
 }
 
-export default AppRouter
+export default AppRouter;
