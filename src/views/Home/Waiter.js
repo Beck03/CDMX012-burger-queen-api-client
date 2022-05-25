@@ -1,8 +1,11 @@
+import mesero from '../../Components/images/mesero.svg'
+import './provisional.css'
+
 const Waiter = ({logOut}) => {
     return(
         <section className='Home'>
-            <h1>WAITER</h1>
-            <button onClick={logOut}>Salir</button>
+            <img src={mesero} alt='mesero' id='construccion'/>
+            <button id='logOut' onClick={logOut}>Cerrar Sesión</button>
         </section>
     );
 }

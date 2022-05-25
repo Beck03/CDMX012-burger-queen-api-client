@@ -1,9 +1,13 @@
+import chef from '../../Components/images/chef.svg'
+import './provisional.css'
+
+
 const Chef = ({logOut}) => {
     return(
-        <section className='Home'>
-            <h1>CHEF</h1>
-            <button onClick={logOut}>Salir</button>
-        </section>
+        <section className='HomeChef'>
+        <img src={chef} alt='mesero' id='construccion'/>
+        <button id='logOut' onClick={logOut}>Cerrar Sesión</button>
+    </section>
     );
 }
 

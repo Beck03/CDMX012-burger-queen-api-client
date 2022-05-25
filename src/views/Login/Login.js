@@ -1,6 +1,6 @@
 import { useState } from "react";
 import burgerQueen from './images/burgerQueen.svg'
-import eye from './images/eye.svg';
+import eye from '../../Components/images/eye.svg';
 import '../Login/Login.css';
 
 const Login = ({ signIn }) => {
