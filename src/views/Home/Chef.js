@@ -1,4 +1,4 @@
-import chef from '../../Components/images/chef.svg'
+import chef from '../../components/images/chef.svg'
 import './provisional.css'
 
 
