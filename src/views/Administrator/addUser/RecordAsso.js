@@ -32,13 +32,7 @@ async function registerAssociate (email, password, name, age, phone, contEmergen
             contract, 
             time
         });
-
-
     }
-
-
-
-
 
     function submitHandler (e){
         e.preventDefault()
@@ -61,14 +55,23 @@ async function registerAssociate (email, password, name, age, phone, contEmergen
         registerAssociate(email, password, name, age, phone, contEmergency, contract, time)
 }
 
-
-
-
     return(
         <section className='RecordAsso'>
            <div className='header'>
-             <img src={icoBurgerQueen} alt='Burger Queen' id='icoBurgerQueen'/>
-             <button id='back'><img src={back} alt='Volver' id='backImg'/></button>
+             <img 
+             src={icoBurgerQueen} 
+             alt='Burger Queen' 
+             id='icoBurgerQueen'
+             />
+             <button 
+             id='back'
+             >
+             <img 
+             src={back} 
+             alt='Volver' 
+             id='backImg'
+             />
+             </button>
            </div>
         <h3>Alta de Asociado</h3>
           <form className='form' onSubmit={submitHandler}>
