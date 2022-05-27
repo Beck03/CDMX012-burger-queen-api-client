@@ -1,6 +1,6 @@
 import { useState } from "react";
 import burgerQueen from './images/burgerQueen.svg'
-import eye from '../../Components/images/eye.svg';
+import eye from '../../components/images/eye.svg';
 import '../Login/Login.css';
 
 const Login = ({ signIn }) => {
@@ -25,7 +25,7 @@ const Login = ({ signIn }) => {
   const access = async () => {
     const response = await signIn(email, password);
     if (response && response.hasOwnProperty('code')) {
-      console.log(response.code)
+      // console.log(response.code)
       switch (response.code) {
         case "auth/invalid-email":
           setMessage("El correo es inválido.");
@@ -72,8 +72,8 @@ const Login = ({ signIn }) => {
           onClick={handleEyeIcon}
         />
       </button>
-      <p>
-        <b>{message}</b>
+      <p data-testid='errorMessage'>
+        {message}
       </p>
       <button
         id='getInto'
