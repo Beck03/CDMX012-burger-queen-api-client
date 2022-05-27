@@ -1,0 +1,186 @@
+.form{
+    border: 2px solid #FBC72C;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    width: 84%;
+    height: 61%;
+    left: 3%;
+    margin-top: 15%;
+    padding: 3%;
+}
+label{
+    font-size: 24px;
+    font-weight: bold;
+}
+.labelName{
+    position: absolute;
+    top: 10%;
+}
+#name{
+    position: absolute;
+    top: 16%;
+    width: 50%;
+    background: none;
+    border: none;
+    padding: 1%;
+    border-bottom: 1.5px solid #FBC72C;
+    font-size: 18px;
+    font-weight: bold;
+}
+.labelEmail{
+    position: absolute;
+    top: 26%;
+}
+#email{
+    position: absolute;
+    top: 32%;
+    width: 50%;
+    background: none;
+    border: none;
+    padding: 1%;
+    border-bottom: 1.5px solid #FBC72C;
+    font-size: 18px;
+    font-weight: bold;
+}
+.labelPassword{
+    position: absolute;
+    top: 43%;
+}
+#password{
+    position: absolute;
+    top: 49%;
+    width: 50%;
+    background: none;
+    border: none;
+    padding: 1%;
+    border-bottom: 1.5px solid #FBC72C;
+    font-size: 18px;
+    font-weight: bold;
+}
+.labelAge{
+    position: absolute;
+    top: 60%;
+}
+#Age{
+    position: absolute;
+    top: 65%;
+    width: 10%;
+    background: none;
+    border: none;
+    padding: 1%;
+    border-bottom: 1.5px solid #FBC72C;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.labelPhone{
+    position: absolute;
+    top: 60%;
+    left: 21%;
+}
+#Phone{
+    position: absolute;
+    top: 65%;
+    left: 21%;
+    width: 28%;
+    background: none;
+    border: none;
+    padding: 1%;
+    border-bottom: 1.5px solid #FBC72C;
+    font-size: 18px;
+    font-weight: bold;
+}
+.labelEmergency{
+    position: absolute;
+    top: 60%;
+    left: 56%;
+}
+#Emergency{
+    position: absolute;
+    top: 65%;
+    left: 56%;
+    width: 38%;
+    background: none;
+    border: none;
+    padding: 1%;
+    border-bottom: 1.5px solid #FBC72C;
+    font-size: 18px;
+    font-weight: bold;
+}
+.labelDate{
+    position: absolute;
+    top: 76%;
+}
+#Date{
+    position: absolute;
+    top: 81%;
+    width: 28%;
+    background: none;
+    border: none;
+    padding: 1%;
+    border-bottom: 1.5px solid #FBC72C;
+    font-size: 18px;
+    font-weight: bold;
+}
+.labelContract{
+    position: absolute;
+    top: 76%;
+    left: 38.5%;
+}
+#Contract{
+    position: absolute;
+    top: 81%;
+    left: 38.5%;
+    width: 28%;
+    background: none;
+    border: none;
+    padding: 1%;
+    border-bottom: 1.5px solid #FBC72C;
+    font-size: 18px;
+    font-weight: bold;
+}
+.labelTime{
+    position: absolute;
+    top: 76%;
+    left: 72%;
+}
+#Time{
+    position: absolute;
+    top: 81%;
+    left: 72%;
+    width: 23%;
+    background: none;
+    border: none;
+    padding: 1%;
+    border-bottom: 1.5px solid #FBC72C;
+    font-size: 18px;
+    font-weight: bold;
+}
+#record{
+    position: absolute;
+    top:92%;
+    left: 66%;
+    width: 30%;
+    height: 5%;
+    background: #FBC72C;
+    border: none;
+    border-radius: 35px;
+    box-shadow: 0px 5.74143px 5.74143px rgba(0, 0, 0, 0.25);
+    font-family: 'Red Hat Mono', monospace;
+    font-size: 28px;
+    font-weight: bolder;
+    text-align: center;
+   
+}
+.check{
+
+    width: 32%;
+    height: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 16%;
+    left: 64%;
+    font-weight: bolder;
+    
+}

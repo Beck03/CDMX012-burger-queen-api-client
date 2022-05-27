@@ -64,7 +64,7 @@ input{
     font-size: x-large;
 }
 ::placeholder{
-    font-size: 1.5em;
+    font-size: 20px;
 }
 #BurgerQueen{
     position: relative;
