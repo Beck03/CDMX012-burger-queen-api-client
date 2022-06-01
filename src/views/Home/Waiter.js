@@ -1,4 +1,4 @@
-import mesero from '../../components/images/mesero.svg'
+import mesero from '../../Components/images/mesero.svg'
 import './provisional.css'
 
 const Waiter = ({logOut}) => {

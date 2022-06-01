@@ -4,13 +4,25 @@ import '../addUser/recordAsso.css';
 import { auth } from '../../../lib/firebaseAuth';
 import { db } from '../../../lib/firebaseConfig';
 import { doc, setDoc } from 'firebase/firestore'
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, updateCurrentUser } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 
 export const RecordAsso = () => {
+   
+    const navigate = useNavigate();
 
-async function registerAssociate (email, password, name, age, phone, contEmergency, contract, time ){
+
+    const partners = () =>{
+        navigate('/AddPartners')
+    }
+
+    const originalUser = auth.currentUser;
+    console.log(originalUser);
+
+async function registerAssociate (email, password, name, age, phone, contEmergency, contract, time, job){
     
+      
     const dataAssociate = await createUserWithEmailAndPassword(
         auth, 
         email, 
@@ -18,7 +30,7 @@ async function registerAssociate (email, password, name, age, phone, contEmergen
         return userFirebase;
         
     });
-        console.log(dataAssociate);
+    await updateCurrentUser(auth, originalUser); 
 
         const docRef = doc(db,  `empleados/${dataAssociate.user.uid}`)
         setDoc(docRef,{
@@ -30,10 +42,11 @@ async function registerAssociate (email, password, name, age, phone, contEmergen
             phone, 
             contEmergency, 
             contract, 
-            time
+            time,
+            job
         });
-
-
+       
+        navigate('/AddPartners')
     }
 
 
@@ -47,28 +60,23 @@ async function registerAssociate (email, password, name, age, phone, contEmergen
         const name = e.target.elements.name.value;
         const age = e.target.elements.Age.value;
         const phone = e.target.elements.Phone.value;
+        const job = e.target.elements.job.value;
         const contEmergency = e.target.elements.Emergency.value;
         const contract = e.target.elements.Contract.value;
         const time = e.target.elements.Time.value;
-        console.log( name);
-        console.log(email);
-        console.log( password);
-        console.log(age);
-        console.log(phone);
-        console.log(contEmergency);
-        console.log(contract);
-        console.log(time);
-        registerAssociate(email, password, name, age, phone, contEmergency, contract, time)
+        registerAssociate(email, password, name, age, phone, contEmergency, contract, time, job)
+        
 }
 
 
 
 
     return(
+
         <section className='RecordAsso'>
            <div className='header'>
              <img src={icoBurgerQueen} alt='Burger Queen' id='icoBurgerQueen'/>
-             <button id='back'><img src={back} alt='Volver' id='backImg'/></button>
+             <button id='back' onClick={partners}><img src={back} alt='Volver' id='backImg'/></button>
            </div>
         <h3>Alta de Asociado</h3>
           <form className='form' onSubmit={submitHandler}>
@@ -78,15 +86,17 @@ async function registerAssociate (email, password, name, age, phone, contEmergen
                 <input type='e-mail' id='email' placeholder='Ej. amaya@burgerqueen.com'/>
                 <label className='labelPassword'>Contraseña</label>
                 <input type='text' id='password' placeholder='Ej. ama1234'/>
-                <div className='check'>
-                    <label><input type="checkbox" className='category' value="Jefe de Cocina"/> Jefe de cocina</label>
-                    <label><input type="checkbox" className='category' value="Cocinero"/> Cocinero</label>
-                    <label><input type="checkbox" className='category' value="Jefe de Meseros"/> Jefe de Meseros</label>
-                    <label><input type="checkbox" className='category' value="Meseros"/> Meseros</label>
-                </div>
-               
+               <select id='job'>
+                    <option value="puesto">Puesto</option>
+                    <option value="Jefe de Cocina">Jefe de Cocina</option>
+                    <option value="Cocinero">Cocinero</option>
+                    <option value="Jefe de Meseros">Jefe de Meseros</option>
+                    <option value="Mesero">Mesero</option>
+                    <option value="Limpieza">Limpieza</option>
+                </select>
+                             
                 <label className='labelAge'>Edad</label>
-                <input type='text' id='Age' placeholder='Ej. 24'/>
+                <input type='text' id='Age' placeholder='Ej. 24 años'/>
                 <label className='labelPhone'>Telefono</label>
                 <input type='text' id='Phone' placeholder='Ej. 55 36 56 95 12'/>
                 <label className='labelEmergency'>Contacto de emergencia</label>
@@ -99,9 +109,7 @@ async function registerAssociate (email, password, name, age, phone, contEmergen
                 <input type='text' id='Time' placeholder='Ej. 8:00 - 16:00'/> 
                 <button id='record' type='submit'>Dar de alta</button>
             </form>
-                
-   
-         
+           
         </section>
     );
 }
