@@ -17,7 +17,7 @@ export const HomeAdm = ({logOut}) => {
              alt='Burger Queen logo'
              id='BurgerQueen' 
              />
-             <h4>Gerencia</h4>
+             <h2>Gerencia</h2>
              <button 
              id='btnProducts' 
              onClick={logOut}

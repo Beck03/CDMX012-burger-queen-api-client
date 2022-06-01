@@ -16,16 +16,16 @@ const PrivateRoutes = () => {
       const userEmail = user.email
       const initial = userEmail[0]
       if (initial === 'g') {
-        setRole('gerente')
+        setRole('administrator')
       } else if (initial === 'm') {
-        setRole('mesero')
+        setRole('waiter')
       } else if (initial === 'c') {
-        setRole('cocinero')
+        setRole('chef')
       }
     }
   });
 
-  if (role === 'gerente') {
+  if (role === 'administrator') {
     return (
       <Routes>
         <Route path='/' element={<HomeAdm logOut={logOut} />} />
@@ -33,13 +33,13 @@ const PrivateRoutes = () => {
         <Route path='/RecordAsso' element={<RecordAsso/>} />
       </Routes>
     )
-  } else if (role === 'mesero') {
+  } else if (role === 'waiter') {
     return (
       <Routes>
         <Route path='/' element={<Waiter logOut={logOut} />} />
       </Routes>
     )
-  } else if (role === 'cocinero') {
+  } else if (role === 'chef') {
     return (
       <Routes>
         <Route path='/' element={<Chef logOut={logOut} />} />

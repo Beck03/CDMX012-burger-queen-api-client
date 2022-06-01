@@ -1,5 +1,5 @@
-import icoBurgerQueen from '../../../Components/images/icoBurgerQueen.svg';
-import back from '../../../Components/images/back.svg'
+import icoBurgerQueen from '../../../components/images/icoBurgerQueen.svg';
+import back from '../../../components/images/back.svg'
 import '../addUser/recordAsso.css';
 import { auth } from '../../../lib/firebaseAuth';
 import { db } from '../../../lib/firebaseConfig';
