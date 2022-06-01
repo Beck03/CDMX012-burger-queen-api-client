@@ -11,18 +11,18 @@
 h3{
     font-size: 30px;
     position: absolute;
-    top: 15%;
+    top: 14%;
     left: 7%;
 }
 .form{
     border: 2px solid #FBC72C;
     box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
     position: absolute;
-    width: 84%;
-    height: 61%;
-    left: 3%;
-    margin-top: 15%;
-    padding: 3%;
+    width: 78%;
+    height: 67%;
+    left: 5%;
+    margin-top: 13%;
+    padding: 6%;
 }
 label{
     font-size: 24px;
@@ -30,41 +30,11 @@ label{
 }
 .labelName{
     position: absolute;
-    top: 10%;
+    top: 7%;
 }
 #name{
     position: absolute;
-    top: 16%;
-    width: 50%;
-    background: none;
-    border: none;
-    padding: 1%;
-    border-bottom: 1.5px solid #FBC72C;
-    font-size: 18px;
-    font-weight: bold;
-}
-.labelEmail{
-    position: absolute;
-    top: 26%;
-}
-#email{
-    position: absolute;
-    top: 32%;
-    width: 50%;
-    background: none;
-    border: none;
-    padding: 1%;
-    border-bottom: 1.5px solid #FBC72C;
-    font-size: 18px;
-    font-weight: bold;
-}
-.labelPassword{
-    position: absolute;
-    top: 43%;
-}
-#password{
-    position: absolute;
-    top: 49%;
+    top: 13%;
     width: 50%;
     background: none;
     border: none;
@@ -75,12 +45,14 @@ label{
 }
 .labelAge{
     position: absolute;
-    top: 60%;
+    top: 7%;
+    left: 63%;
 }
 #Age{
     position: absolute;
-    top: 65%;
-    width: 10%;
+    top: 13%;
+    left: 63%;
+    width: 17%;
     background: none;
     border: none;
     padding: 1%;
@@ -88,16 +60,30 @@ label{
     font-size: 18px;
     font-weight: bold;
 }
-
+.labelEmail{
+    position: absolute;
+    top: 23%;
+}
+#email{
+    position: absolute;
+    top: 29%;
+    width: 50%;
+    background: none;
+    border: none;
+    padding: 1%;
+    border-bottom: 1.5px solid #FBC72C;
+    font-size: 18px;
+    font-weight: bold;
+}
 .labelPhone{
     position: absolute;
-    top: 60%;
-    left: 21%;
+    top: 23%;
+    left: 63%;
 }
 #Phone{
     position: absolute;
-    top: 65%;
-    left: 21%;
+    top: 29%;
+    left: 63%;
     width: 28%;
     background: none;
     border: none;
@@ -106,16 +92,14 @@ label{
     font-size: 18px;
     font-weight: bold;
 }
-.labelEmergency{
+.labelPassword{
     position: absolute;
-    top: 60%;
-    left: 56%;
+    top: 40%;
 }
-#Emergency{
+#password{
     position: absolute;
-    top: 65%;
-    left: 56%;
-    width: 38%;
+    top: 46%;
+    width: 50%;
     background: none;
     border: none;
     padding: 1%;
@@ -125,11 +109,13 @@ label{
 }
 .labelDate{
     position: absolute;
-    top: 76%;
+    top: 40%;
+    left: 63%;
 }
 #Date{
     position: absolute;
-    top: 81%;
+    top: 46%;
+    left: 63%;
     width: 28%;
     background: none;
     border: none;
@@ -140,13 +126,11 @@ label{
 }
 .labelContract{
     position: absolute;
-    top: 76%;
-    left: 38.5%;
+    top: 57%;
 }
 #Contract{
     position: absolute;
-    top: 81%;
-    left: 38.5%;
+    top: 63%;
     width: 28%;
     background: none;
     border: none;
@@ -157,14 +141,14 @@ label{
 }
 .labelTime{
     position: absolute;
-    top: 76%;
-    left: 72%;
+    top: 57%;
+    left: 40%;
 }
 #Time{
     position: absolute;
-    top: 81%;
-    left: 72%;
-    width: 23%;
+    top: 63%;
+    left: 40%;
+    width: 23.5%;
     background: none;
     border: none;
     padding: 1%;
@@ -172,12 +156,42 @@ label{
     font-size: 18px;
     font-weight: bold;
 }
+
+.labelEmergency{
+    position: absolute;
+    top: 75%;
+  
+}
+#Emergency{
+    position: absolute;
+    top: 81%;
+    width: 40%;
+    background: none;
+    border: none;
+    padding: 1%;
+    border-bottom: 1.5px solid #FBC72C;
+    font-size: 18px;
+    font-weight: bold;
+}
+select{
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 1%;
+    top: 60%;
+    left: 69.5%;
+    height: 5%;
+    width: 24%;
+    border: 1.5px solid #FBC72C;
+}
+
+
 #record{
     position: absolute;
-    top:92%;
-    left: 66%;
+    top:85%;
+    left: 63%;
     width: 30%;
-    height: 5%;
+    height: 8%;
     background: #FBC72C;
     border: none;
     border-radius: 35px;
@@ -188,17 +202,6 @@ label{
     text-align: center;
    
 }
-.check{
 
-    width: 32%;
-    height: 40%;
-    display: flex;
-    flex-wrap: wrap;
-    position: absolute;
-    top: 16%;
-    left: 64%;
-    font-weight: bolder;
-    
-}
 
 

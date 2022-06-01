@@ -1,0 +1,24 @@
+#tarjetaAso{
+    position: relative;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+#tarjetaAso div{
+    border: 1px solid #FBC72C;
+    border-top: none;
+    text-align: left;
+    background-color: white;
+    padding: 5.5%;
+    padding-left: 4%;
+    font-size: 30px;
+    font-weight: 500;
+}
+.details{
+    background: none;
+    border: none;
+    font-size: 18px;
+    text-decoration: underline #333333;
+    color: #333333;
+    position: absolute;
+    right: 25px;
+}

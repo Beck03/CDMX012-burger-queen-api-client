@@ -36,3 +36,24 @@
     left: 81%;
     
 }
+#listaDeAsociados{
+    background-color: #A3FFC2;
+    width: 90%;
+    margin: auto;
+    margin-top: 12%;
+    position: relative;
+}
+#tarjetaCategory{
+    display: flex;
+    flex-wrap: nowrap;
+}
+#tarjetaCategory div{
+    position: relative;
+    border: 1px solid #FBC72C;
+    text-align: left;
+    background-color: white;
+    padding: 2.5%;
+    font-size: 35px;
+    width: 50%;
+    font-weight: 900;
+}
