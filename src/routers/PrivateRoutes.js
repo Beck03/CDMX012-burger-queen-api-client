@@ -7,6 +7,7 @@ import Chef from '../views/Home/Chef';
 import { auth, logOut } from '../lib/firebaseAuth.js'
 import { onAuthStateChanged } from 'firebase/auth';
 import { RecordAsso } from '../views/Administrator/addUser/RecordAsso.js';
+import Products from '../views/Administrator/products/Products.js';
 
 const PrivateRoutes = () => {
   const [role, setRole] = useState(null);
@@ -29,8 +30,9 @@ const PrivateRoutes = () => {
     return (
       <Routes>
         <Route path='/' element={<HomeAdm logOut={logOut} />} />
-        <Route path='/AddPartners' element={<AddPartners/>} />
-        <Route path='/RecordAsso' element={<RecordAsso/>} />
+        <Route path='/AddPartners' element={<AddPartners />} />
+        <Route path='/RecordAsso' element={<RecordAsso />} />
+        <Route path='/Products' element={<Products />} />
       </Routes>
     )
   } else if (role === 'waiter') {
