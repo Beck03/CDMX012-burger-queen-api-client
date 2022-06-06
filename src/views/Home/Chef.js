@@ -1,4 +1,5 @@
-import chef from '../../components/images/chef.svg'
+// import React from 'react';
+import chef from '../../Components/images/chef.svg'
 import './provisional.css'
 
 

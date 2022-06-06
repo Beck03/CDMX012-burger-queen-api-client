@@ -1,5 +1,6 @@
-import icoBurgerQueen from '../../../components/images/icoBurgerQueen.svg';
-import back from '../../../components/images/back.svg'
+import icoBurgerQueen from '../../../Components/images/icoBurgerQueen.svg';
+// import React  from 'react';
+import back from '../../../Components/images/back.svg'
 import '../addUser/recordAsso.css';
 import { auth } from '../../../lib/firebaseAuth';
 import { db } from '../../../lib/firebaseConfig';
@@ -17,7 +18,9 @@ export const RecordAsso = () => {
   const originalUser = auth.currentUser;
   console.log(originalUser);
 
-  async function registerAssociate(email, password, name, age, phone, contEmergency, contract, time, job) {
+
+  async function registerAssociate(email, password, name, age, phone, date, contEmergency, contract, time, job) {
+
 
     const dataAssociate = await createUserWithEmailAndPassword(
       auth,
@@ -36,6 +39,7 @@ export const RecordAsso = () => {
       name,
       age,
       phone,
+      date,
       contEmergency,
       contract,
       time,
@@ -45,6 +49,7 @@ export const RecordAsso = () => {
     navigate('/AddPartners')
   }
 
+
   function submitHandler(e) {
     e.preventDefault()
     const email = e.target.elements.email.value;
@@ -52,11 +57,13 @@ export const RecordAsso = () => {
     const name = e.target.elements.name.value;
     const age = e.target.elements.Age.value;
     const phone = e.target.elements.Phone.value;
+    const date = e.target.elements.Date.value;
     const job = e.target.elements.job.value;
     const contEmergency = e.target.elements.Emergency.value;
     const contract = e.target.elements.Contract.value;
     const time = e.target.elements.Time.value;
-    registerAssociate(email, password, name, age, phone, contEmergency, contract, time, job)
+    registerAssociate(email, password, name, age, phone, date, contEmergency, contract, time, job)
+
   }
 
   return (
