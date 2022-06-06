@@ -2,99 +2,115 @@
   "productos": [
     {
       "id": 1,
-      "nombre": "Café americano",
-      "tipo": "bebida",
-      "categoría": "desayuno",
-      "precio": "$5.00",
-      "img": "https://imgbox.com/rDdHRTHg"
+      "name": "Café americano",
+      "type": "Bebida",
+      "category": "Desayuno",
+      "price": "$5.00",
+      "img": "https://images2.imgbox.com/9a/a4/rDdHRTHg_o.png"
     },
     {
       "id": 2,
-      "nombre": "Café con leche",
-      "tipo": "bebida",
-      "categoría": "desayuno",
-      "precio": "$7.00",
-      "img": "https://imgbox.com/R6KXGcX0"
+      "name": "Café con leche",
+      "type": "Bebida",
+      "category": "Desayuno",
+      "price": "$7.00",
+      "img": "https://images2.imgbox.com/ae/06/R6KXGcX0_o.png"
     },
     {
       "id": 3,
-      "nombre": "Sándwich de jamón y queso",
-      "tipo": "alimento",
-      "categoría": "desayuno",
-      "precio": "$10.00",
-      "img": "https://imgbox.com/0SJsAzrs"
+      "name": "Sándwich de jamón y queso",
+      "type": "Alimento",
+      "category": "Desayuno",
+      "price": "$10.00",
+      "img": "https://images2.imgbox.com/70/34/0SJsAzrs_o.png"
     },
     {
       "id": 4,
-      "nombre": "Jugo de frutas natural",
-      "tipo": "bebida",
-      "categoría": "desayuno",
-      "precio": "$7.00",
-      "img": "https://imgbox.com/wPCr9b83"
+      "name": "Jugo de frutas natural",
+      "type": "Bebida",
+      "category": "Desayuno",
+      "price": "$7.00",
+      "img": "https://images2.imgbox.com/cc/f8/wPCr9b83_o.png"
     },
     {
       "id": 5,
-      "nombre": "Hamburguesa sencilla",
-      "tipo": "alimento",
-      "categoría": "comida",
-      "precio": "$10.00",
-      "img": "https://imgbox.com/lZuQc4nw"
+      "name": "Hamburguesa sencilla",
+      "type": "Alimento",
+      "category": "Comida",
+      "price": "$10.00",
+      "img": "https://images2.imgbox.com/e6/7f/lZuQc4nw_o.png"
     },
     {
       "id": 6,
-      "nombre": "Hamburguesa doble",
-      "tipo": "alimento",
-      "categoría": "comida",
-      "precio": "$15.00",
+      "name": "Hamburguesa doble",
+      "type": "Alimento",
+      "category": "Comida",
+      "price": "$15.00",
       "img": "https://imgbox.com/F3xcQsKb"
     },
     {
       "id": 7,
-      "nombre": "Papas fritas",
-      "tipo": "extra",
-      "categoría": "comida",
-      "precio": "$5.00",
+      "name": "Papas fritas",
+      "type": "Extra",
+      "category": "Comida",
+      "price": "$5.00",
       "img": "https://imgbox.com/4Go2qpQ4"
     },
     {
       "id": 8,
-      "nombre": "Aros de cebolla",
-      "tipo": "extra",
-      "categoría": "comida",
-      "precio": "$5.00",
+      "name": "Aros de cebolla",
+      "type": "Extra",
+      "category": "Comida",
+      "price": "$5.00",
       "img": "https://imgbox.com/hkuKygdq"
     },
     {
       "id": 9,
-      "nombre": "Gaseosa 500ml",
-      "tipo": "bebida",
-      "categoría": "comida",
-      "precio": "$7.00",
+      "name": "Gaseosa 500ml",
+      "type": "Bebida",
+      "category": "Comida",
+      "price": "$7.00",
       "img": "https://imgbox.com/1PSyg2mn"
     },
     {
       "id": 10,
-      "nombre": "Gaseosa 750ml",
-      "tipo": "bebida",
-      "categoría": "comida",
-      "precio": "$10.00",
+      "name": "Gaseosa 750ml",
+      "type": "Bebida",
+      "category": "Comida",
+      "price": "$10.00",
       "img": "https://imgbox.com/1PSyg2mn"
     },
     {
       "id": 11,
-      "nombre": "Agua 500ml",
-      "tipo": "bebida",
-      "categoría": "comida",
-      "precio": "$5.00",
+      "name": "Agua 500ml",
+      "type": "Bebida",
+      "category": "Comida",
+      "price": "$5.00",
       "img": "https://imgbox.com/7Juk5mEe"
     },
     {
       "id": 12,
-      "nombre": "Agua 750ml",
-      "tipo": "bebida",
-      "categoría": "comida",
-      "precio": "$7.00",
+      "name": "Agua 750ml",
+      "type": "Bebida",
+      "category": "Comida",
+      "price": "$7.00",
       "img": "https://imgbox.com/7Juk5mEe"
+    },
+    {
+      "name": "Leche fresa",
+      "price": "$5.00",
+      "type": "Bebida",
+      "category": "Desayuno",
+      "img": {},
+      "id": 13
+    },
+    {
+      "name": "Lechuga",
+      "price": "$5.00",
+      "type": "Alimento",
+      "category": "Comida",
+      "img": {},
+      "id": 14
     }
   ]
 }
