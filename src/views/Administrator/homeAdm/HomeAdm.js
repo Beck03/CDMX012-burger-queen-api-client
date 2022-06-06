@@ -13,10 +13,24 @@ export const HomeAdm = ({logOut}) => {
     
     return(
         <section className='homeAdm'>
-             <img src={burgerQueen} alt='Burger Queen logo'id='BurgerQueen' />
+             <img 
+             src={burgerQueen} 
+             alt='Burger Queen logo'
+             id='BurgerQueen' 
+             />
              <h4>Gerencia</h4>
-             <button id='btnProducts' onClick={logOut}>Salir</button>
-             <button id='btnAssociates' onClick={partners}>Asociados</button>
+             <button 
+             id='btnProducts' 
+             onClick={logOut}
+             >
+             Salir
+             </button>
+             <button 
+             id='btnAssociates' 
+             onClick={partners}
+             >
+             Asociados
+             </button>
         </section>
     );
 }
