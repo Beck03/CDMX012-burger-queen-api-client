@@ -1,5 +1,6 @@
 import { useState } from 'react';
-// import './App.css';
+import React from 'react';
+import './sweetAlert.css';
 import AppRouter from './routers/AppRouter';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 

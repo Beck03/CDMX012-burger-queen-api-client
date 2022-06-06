@@ -1,4 +1,6 @@
 import icoBurgerQueen from '../../../Components/images/icoBurgerQueen.svg';
+import React  from 'react';
+
 import back from '../../../Components/images/back.svg'
 import '../addUser/recordAsso.css';
 import { auth } from '../../../lib/firebaseAuth';
@@ -20,7 +22,7 @@ export const RecordAsso = () => {
     const originalUser = auth.currentUser;
     console.log(originalUser);
 
-async function registerAssociate (email, password, name, age, phone, contEmergency, contract, time, job){
+async function registerAssociate (email, password, name, age, phone, date, contEmergency, contract, time, job){
     
       
     const dataAssociate = await createUserWithEmailAndPassword(
@@ -39,7 +41,8 @@ async function registerAssociate (email, password, name, age, phone, contEmergen
             password, 
             name, 
             age, 
-            phone, 
+            phone,
+            date, 
             contEmergency, 
             contract, 
             time,
@@ -60,11 +63,12 @@ async function registerAssociate (email, password, name, age, phone, contEmergen
         const name = e.target.elements.name.value;
         const age = e.target.elements.Age.value;
         const phone = e.target.elements.Phone.value;
+        const date = e.target.elements.Date.value;
         const job = e.target.elements.job.value;
         const contEmergency = e.target.elements.Emergency.value;
         const contract = e.target.elements.Contract.value;
         const time = e.target.elements.Time.value;
-        registerAssociate(email, password, name, age, phone, contEmergency, contract, time, job)
+        registerAssociate(email, password, name, age, phone, date, contEmergency, contract, time, job)
         
 }
 

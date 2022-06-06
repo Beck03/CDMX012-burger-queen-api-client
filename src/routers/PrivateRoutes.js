@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import React  from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { HomeAdm } from '../views/Administrator/homeAdm/HomeAdm.js'
 import { AddPartners } from '../views/Administrator/addPartners/AddPartners.js'
@@ -7,6 +8,7 @@ import Chef from '../views/Home/Chef';
 import { auth, logOut } from '../lib/firebaseAuth.js'
 import { onAuthStateChanged } from 'firebase/auth';
 import { RecordAsso } from '../views/Administrator/addUser/RecordAsso.js';
+import { EditDeleteAsso } from '../Components/associate/EditDeleteAsso.js';
 
 const PrivateRoutes = () => {
   const [role, setRole] = useState(null);
@@ -31,6 +33,7 @@ const PrivateRoutes = () => {
         <Route path='/' element={<HomeAdm logOut={logOut} />} />
         <Route path='/AddPartners' element={<AddPartners/>} />
         <Route path='/RecordAsso' element={<RecordAsso/>} />
+        <Route path='/EditDeletAsso/:id' element={<EditDeleteAsso/>} />
       </Routes>
     )
   } else if (role === 'mesero') {
