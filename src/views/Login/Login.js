@@ -1,7 +1,7 @@
 import { useState } from "react";
 import React  from 'react';
 import burgerQueen from './images/burgerQueen.svg';
-import eye from '../../Components/images/eye.svg';
+import eye from '../../components/images/eye.svg';
 import '../Login/Login.css';
 
 const Login = ({ signIn }) => {
@@ -45,12 +45,12 @@ const Login = ({ signIn }) => {
 
   return (
     <section className='Login'>
-      <h4>Bienvenido</h4>
       <img
         src={burgerQueen}
         alt='Burger Queen logo'
         id='BurgerQueen'
       />
+      <h2>Bienvenido</h2>
       <input
         type='email'
         id='Email'
@@ -58,26 +58,28 @@ const Login = ({ signIn }) => {
         placeholder="Email"
         onChange={handleEmail}
       />
-      <input
-        type={visible}
-        id='Password'
-        name='password'
-        placeholder="Contraseña"
-        onChange={handlePassword}
-      />
-      <button
-        id='mask'>
-        <img
-          src={eye}
-          alt='Eye icon'
-          onClick={handleEyeIcon}
+      <section className='pswrdGroup'>
+        <input
+          type={visible}
+          id='Password'
+          name='password'
+          placeholder="Contraseña"
+          onChange={handlePassword}
         />
-      </button>
+        <button
+          id='mask'>
+          <img
+            src={eye}
+            alt='Eye icon'
+            onClick={handleEyeIcon}
+          />
+        </button>
+      </section>
       <p data-testid='errorMessage'>
         {message}
       </p>
       <button
-        id='getInto'
+        id='loginBtn'
         onClick={access}>
         Ingresar
       </button>

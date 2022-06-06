@@ -1,0 +1,41 @@
+.contents {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.product-list {
+  width: 90%;
+  border: 10px solid pink;
+  /* align-self: center; */
+}
+
+h2 {
+  align-self: flex-end;
+}
+
+.modal-content {
+  padding: 150px 60px;
+}
+
+.close {
+  font-size: xx-large;
+}
+
+.add-product {
+  background-color: #F18FDE;
+  color: black;
+  width: 30%;
+  height: 5%;
+  border: none;
+  border-radius: 35px;
+  box-shadow: 0px 5.74143px 5.74143px rgba(0, 0, 0, 0.25);
+  font-family: 'Red Hat Mono', monospace;
+  font-size: 25px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+input[type="radio"]:checked {
+  background-color: #FBC72C;
+  border: 2px solid #FBC72C;
+}

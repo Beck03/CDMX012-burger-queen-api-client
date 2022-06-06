@@ -8,7 +8,8 @@ import Chef from '../views/Home/Chef';
 import { auth, logOut } from '../lib/firebaseAuth.js'
 import { onAuthStateChanged } from 'firebase/auth';
 import { RecordAsso } from '../views/Administrator/addUser/RecordAsso.js';
-import { EditDeleteAsso } from '../Components/associate/EditDeleteAsso.js';
+import Products from '../views/Administrator/products/Products.js';
+import { EditDeleteAsso } from '../components/associate/EditDeleteAsso.js';
 
 const PrivateRoutes = () => {
   const [role, setRole] = useState(null);
@@ -18,31 +19,32 @@ const PrivateRoutes = () => {
       const userEmail = user.email
       const initial = userEmail[0]
       if (initial === 'g') {
-        setRole('gerente')
+        setRole('administrator')
       } else if (initial === 'm') {
-        setRole('mesero')
+        setRole('waiter')
       } else if (initial === 'c') {
-        setRole('cocinero')
+        setRole('chef')
       }
     }
   });
 
-  if (role === 'gerente') {
+  if (role === 'administrator') {
     return (
       <Routes>
         <Route path='/' element={<HomeAdm logOut={logOut} />} />
-        <Route path='/AddPartners' element={<AddPartners/>} />
-        <Route path='/RecordAsso' element={<RecordAsso/>} />
+        <Route path='/AddPartners' element={<AddPartners />} />
+        <Route path='/RecordAsso' element={<RecordAsso />} />
+        <Route path='/Products' element={<Products />} />
         <Route path='/EditDeletAsso/:id' element={<EditDeleteAsso/>} />
       </Routes>
     )
-  } else if (role === 'mesero') {
+  } else if (role === 'waiter') {
     return (
       <Routes>
         <Route path='/' element={<Waiter logOut={logOut} />} />
       </Routes>
     )
-  } else if (role === 'cocinero') {
+  } else if (role === 'chef') {
     return (
       <Routes>
         <Route path='/' element={<Chef logOut={logOut} />} />
