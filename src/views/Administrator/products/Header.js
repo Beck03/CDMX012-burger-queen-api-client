@@ -1,5 +1,5 @@
 import '../products/Header.css';
-import icoBurgerQueen from '../../../components/images/icoBurgerQueen.svg';
+import icoBurgerQueen from '../../../Components/images/icoBurgerQueen.svg';
 import { useNavigate } from "react-router-dom";
 
 
