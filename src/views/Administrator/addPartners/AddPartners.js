@@ -1,6 +1,8 @@
 import icoBurgerQueen from '../../../Components/images/icoBurgerQueen.svg';
 import plus from '../../../Components/images/Plus.svg';
-import '../../Administrator/addPartners/AddPartnes.css'
+import '../../Administrator/addPartners/AddPartnes.css';
+import React  from 'react';
+// eslint-disable-next-line
 import { useNavigate } from "react-router-dom";
 import { Associate } from '../../../Components/associate/Associate.js';
 

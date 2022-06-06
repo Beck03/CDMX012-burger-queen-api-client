@@ -1,4 +1,7 @@
+import React, { Component }  from 'react';
 import mesero from '../../Components/images/mesero.svg'
+
+
 
 
 
