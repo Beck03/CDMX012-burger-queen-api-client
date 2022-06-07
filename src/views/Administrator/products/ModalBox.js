@@ -3,9 +3,7 @@ import { Button, Modal, ModalHeader, ModalBody, FormGroup, Label, Form } from 'r
 import { useForm } from "react-hook-form";
 import { useEffect } from 'react';
 
-
-
-const ModalBox = ({ modalStatus, toggle, formCategory, formType, onSubmit, type, category, defVal }) => {
+const ModalBox = ({ modalStatus, toggle, formCategory, formType, onSubmit, type, category, defVal, btnText }) => {
 
   const { register, handleSubmit, reset, formState } = useForm();
 
@@ -22,15 +20,17 @@ const ModalBox = ({ modalStatus, toggle, formCategory, formType, onSubmit, type,
     if (modalStatus === true) {
       reset({
         name: defVal.name,
-        price: defVal.price
+        price: defVal.price,
+        id:defVal.id
       })
     } else if (modalStatus === false) {
       reset({
         name: '',
-        price: ''
+        price: '',
+        id:''
       })
     }
-  }, [modalStatus, defVal.name, defVal.price, reset])
+  }, [modalStatus, defVal.name, defVal.price, defVal.id, reset])
 
 
   return (
@@ -41,40 +41,131 @@ const ModalBox = ({ modalStatus, toggle, formCategory, formType, onSubmit, type,
       <ModalBody>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <FormGroup>
-            <Label for='nameP'>Nombre</Label>
-            <input type='text' id='nameP' {...register('name')} defaultValue={defVal.name} />
+            <Label for='idP'>
+              Id
+            </Label>
+            <input
+              type='text'
+              id='idP'
+              placeholder='Id se creará automáticamente'
+              readOnly
+              {...register('id')}
+            />
           </FormGroup>
           <FormGroup>
-            <Label for='price'>Precio</Label>
-            <input type='text' id='price' {...register('price')} defaultValue={defVal.price} />
+            <Label for='nameP'>
+              Nombre
+            </Label>
+            <input
+              type='text'
+              id='nameP'
+              {...register('name')}
+            />
           </FormGroup>
+
+          <FormGroup>
+            <Label for='price'>
+              Precio
+            </Label>
+            <input
+              type='text'
+              id='price'
+              {...register('price')}
+            />
+          </FormGroup>
+
           <p>Tipo</p>
           <FormGroup check>
-            <Label for='food'>Alimento</Label>
-            <input type='radio' id='food' name='type' value='Alimento' onChange={formType} checked={defVal.type==='Alimento'?true:null} {...register(type)} />
+            <Label for='food'>
+              Alimento
+            </Label>
+            <input
+              type='radio'
+              id='food'
+              name='type'
+              value='Alimento'
+              onChange={formType}
+              checked={defVal.type === 'Alimento' ? true : null}
+              {...register(type)}
+            />
           </FormGroup>
+
           <FormGroup check>
-            <Label for='drink'>Bebida</Label>
-            <input type='radio' id='drink' name='type' value='Bebida' onChange={formType} checked={defVal.type==='Bebida'?true:null}{...register(type)} />
+            <Label for='drink'>
+              Bebida
+            </Label>
+            <input
+              type='radio'
+              id='drink'
+              name='type'
+              value='Bebida'
+              onChange={formType}
+              checked={defVal.type === 'Bebida' ? true : null}
+              {...register(type)}
+            />
           </FormGroup>
+
           <FormGroup check>
-            <Label for='extra'>Extra</Label>
-            <input type='radio' id='extra' name='type' value='Extra' onChange={formCategory} checked={defVal.type==='Extra'?true:null} {...register(type)} />
+            <Label for='extra'>
+              Extra
+            </Label>
+            <input
+              type='radio'
+              id='extra'
+              name='type'
+              value='Extra'
+              onChange={formCategory}
+              checked={defVal.type === 'Extra' ? true : null}
+              {...register(type)}
+            />
           </FormGroup>
+
           <p>Categoría</p>
           <FormGroup check>
-            <Label for='breakfast'>Desayuno</Label>
-            <input type='radio' id='breakfast' name='category' value='Desayuno' onChange={formCategory} checked={defVal.category==='Desayuno'?true:null}{...register(category)} />
+            <Label for='breakfast'>
+              Desayuno
+            </Label>
+            <input
+              type='radio'
+              id='breakfast'
+              name='category'
+              value='Desayuno'
+              onChange={formCategory}
+              checked={defVal.category === 'Desayuno' ? true : null}
+              {...register(category)}
+            />
           </FormGroup>
+
           <FormGroup check>
-            <Label for='lunch'>Comida</Label>
-            <input type='radio' id='lunch' name='category' value='Comida' onChange={formCategory} checked={defVal.category==='Comida'?true:null}{...register(category)} />
+            <Label for='lunch'>
+              Comida
+            </Label>
+            <input
+              type='radio'
+              id='lunch'
+              name='category'
+              value='Comida'
+              onChange={formCategory}
+              checked={defVal.category === 'Comida' ? true : null}
+              {...register(category)}
+            />
           </FormGroup>
+
           <FormGroup>
-            <Label for='image'>Imagen</Label>
-            <input type='file' id='image' {...register('img')} />
+            <Label for='image'>
+              Imagen
+            </Label>
+            <input
+              type='file'
+              id='image'
+              {...register('img')}
+            />
           </FormGroup>
-          <Button className='add-product'>Guardar</Button>
+
+          <Button className='add-product'>
+            {btnText}
+          </Button>
+
         </Form>
       </ModalBody>
     </Modal>

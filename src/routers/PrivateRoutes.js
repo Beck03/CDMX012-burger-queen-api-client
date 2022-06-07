@@ -9,7 +9,7 @@ import { auth, logOut } from '../lib/firebaseAuth.js'
 import { onAuthStateChanged } from 'firebase/auth';
 import { RecordAsso } from '../views/Administrator/addUser/RecordAsso.js';
 import Products from '../views/Administrator/products/Products.js';
-import { EditDeleteAsso } from '../components/associate/EditDeleteAsso.js';
+import { EditDeleteAsso } from '../Components/associate/EditDeleteAsso.js';
 
 const PrivateRoutes = () => {
   const [role, setRole] = useState(null);

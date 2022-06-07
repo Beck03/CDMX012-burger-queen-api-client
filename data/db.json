@@ -97,20 +97,36 @@
       "img": "https://imgbox.com/7Juk5mEe"
     },
     {
-      "name": "Leche fresa",
+      "name": "Leche vainilla",
       "price": "$5.00",
+      "id": 13,
       "type": "Bebida",
       "category": "Desayuno",
-      "img": {},
-      "id": 13
+      "img": {}
     },
     {
       "name": "Lechuga",
-      "price": "$5.00",
+      "price": "$6.00",
+      "id": 14,
       "type": "Alimento",
       "category": "Comida",
-      "img": {},
-      "id": 14
+      "img": {}
+    },
+    {
+      "name": "Leche fresa",
+      "price": "$5.00",
+      "id": 15,
+      "type": "Bebida",
+      "category": "Desayuno",
+      "img": {}
+    },
+    {
+      "name": "Leche chocolate",
+      "price": "$5.00",
+      "id": 16,
+      "type": "Bebida",
+      "category": "Comida",
+      "img": {}
     }
   ]
 }

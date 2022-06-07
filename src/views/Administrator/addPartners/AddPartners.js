@@ -3,7 +3,7 @@ import plus from '../../../Components/images/Plus.svg';
 import '../../Administrator/addPartners/AddPartnes.css';
 // import React  from 'react';
 import { useNavigate } from "react-router-dom";
-import { Associate } from '../../../components/associate/Associate.js';
+import { Associate } from '../../../Components/associate/Associate.js';
 
 export const AddPartners = () => {
   const navigate = useNavigate();
