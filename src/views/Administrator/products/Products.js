@@ -6,8 +6,7 @@ import Header from './Header'
 import { Button } from 'reactstrap';
 import ModalBox from './ModalBox';
 
-//por alguna razón que no entiendo, Input de Bootstrap no funciona con useForm
-//Hacer que al editar elemento se vuelva a cargar
+//falta agregarle el sweetalert para borrado
 
 const Products = () => {
 
@@ -36,7 +35,6 @@ const Products = () => {
       })
       .then(data => {
         setProducts(data);
-        console.log('holi')
       });
   }, [])
 
@@ -80,6 +78,22 @@ const Products = () => {
       })
   }
 
+  const deleteProduct = async (data) => {
+    console.log(data)
+    await fetch('http://localhost:3001/productos/' + data.id, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+  })
+  .then(res => res.json())
+  .then(() => {
+    const newData = [...products];
+    setProducts(newData.filter(info=>info.id!==data.id));
+  });
+  }
+
 
   const onSubmit = (data) => {
     createProduct(data);
@@ -121,7 +135,7 @@ const Products = () => {
                   {/* <td><img alt='bla'src={product.img}/></td> */}
                   <td>{product.price}</td>
                   <td>{product.category}</td>
-                  <td onClick={() => alert('borrar')}>Borrar</td>
+                  <td onClick={() => deleteProduct(product)}>Borrar</td>
                 </tr>
               ))}
             </tbody>

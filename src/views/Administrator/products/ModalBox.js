@@ -3,6 +3,8 @@ import { Button, Modal, ModalHeader, ModalBody, FormGroup, Label, Form } from 'r
 import { useForm } from "react-hook-form";
 import { useEffect } from 'react';
 
+//por alguna razón que no entiendo, Input de Bootstrap no funciona con useForm
+
 const ModalBox = ({ modalStatus, toggle, formCategory, formType, onSubmit, type, category, defVal, btnText }) => {
 
   const { register, handleSubmit, reset, formState } = useForm();
