@@ -20,15 +20,17 @@ const ModalBox = ({ modalStatus, toggle, formCategory, formType, onSubmit, type,
     if (modalStatus === true) {
       reset({
         name: defVal.name,
-        price: defVal.price
+        price: defVal.price,
+        id:defVal.id
       })
     } else if (modalStatus === false) {
       reset({
         name: '',
-        price: ''
+        price: '',
+        id:''
       })
     }
-  }, [modalStatus, defVal.name, defVal.price, reset])
+  }, [modalStatus, defVal.name, defVal.price, defVal.id, reset])
 
 
   return (
@@ -38,7 +40,18 @@ const ModalBox = ({ modalStatus, toggle, formCategory, formType, onSubmit, type,
       </ModalHeader>
       <ModalBody>
         <Form onSubmit={handleSubmit(onSubmit)}>
-
+          <FormGroup>
+            <Label for='idP'>
+              Id
+            </Label>
+            <input
+              type='text'
+              id='idP'
+              placeholder='Id se creará automáticamente'
+              readOnly
+              {...register('id')}
+            />
+          </FormGroup>
           <FormGroup>
             <Label for='nameP'>
               Nombre

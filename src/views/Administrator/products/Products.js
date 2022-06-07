@@ -7,6 +7,7 @@ import { Button } from 'reactstrap';
 import ModalBox from './ModalBox';
 
 //por alguna razón que no entiendo, Input de Bootstrap no funciona con useForm
+//Hacer que al editar elemento se vuelva a cargar
 
 const Products = () => {
 
@@ -35,6 +36,7 @@ const Products = () => {
       })
       .then(data => {
         setProducts(data);
+        console.log('holi')
       });
   }, [])
 
@@ -49,25 +51,49 @@ const Products = () => {
       .catch(error => console.error('Error:', error))
       .then(response => {
         console.log('Success:', response);
-        setProducts(products.concat(response))
+        setProducts(products.concat(response));
       });
   }
 
+  const editProduct = (data) => {
+    const requestOptions = {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    };
+    fetch('http://localhost:3001/productos/' + modalInfo.id, requestOptions)
+      .then(res => res.json())
+      .then(data => {
+        const newData = [...products]; //esto permite que se renderice al llamar a la funcion
+        const obtained = data;
+        newData.map(function (info) {
+          if (obtained.id === info.id) {
+            info.name = obtained.name;
+            info.price = obtained.price;
+            info.type = obtained.type;
+            info.category = obtained.category;
+          }
+          return info;
+        })
+        console.log('Success:', data);
+        setProducts(newData);
+      })
+  }
+
+
   const onSubmit = (data) => {
-    console.log(data)
-    createProduct(data)
-    toggle()
+    createProduct(data);
+    toggle();
   }
 
   const loadData = (data) => {
     toggle2();
-    console.log(data);
     setModalInfo(data);
   }
 
   const editData = (data) => {
-    console.log(data)
-    toggle()
+    editProduct(data);
+    toggle2();
   }
 
   return (
