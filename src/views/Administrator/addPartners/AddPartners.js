@@ -1,40 +1,42 @@
-import icoBurgerQueen from '../../../Components/images/icoBurgerQueen.svg';
+// import icoBurgerQueen from '../../../Components/images/icoBurgerQueen.svg';
 import plus from '../../../Components/images/Plus.svg';
 import '../../Administrator/addPartners/AddPartnes.css';
-import React  from 'react';
-// eslint-disable-next-line
+// import React  from 'react';
 import { useNavigate } from "react-router-dom";
 import { Associate } from '../../../Components/associate/Associate.js';
+import Header from '../products/Header'
 
 
+export const AddPartners = ({ logOut }) => {
+  const navigate = useNavigate();
 
-export const AddPartners = () => {
-   const navigate = useNavigate();
+  const partners = () => {
+    navigate('/RecordAsso')
+  }
 
-    const partners = () =>{
-        navigate('/RecordAsso')
-    }
+  return (
+    <section className='addPartners'>
 
-   
-   
+      <Header view={'Productos'} logOut={logOut} route={'/Products'} />
 
-    return(
-        <section className='addPartners'>
-         <div className='header'>
-            <img src={icoBurgerQueen} alt='Burger Queen' id='icoBurgerQueen'/>
-            <button id='products'>Alimentos</button>
-         </div>
-        <h3>Asociados</h3>
-        <section id='listaDeAsociados'>
+      <h3 className='bolded size-text'>Asociados</h3>
+      <section id='listaDeAsociados'>
         <div id='tarjetaCategory'>
-          <div><h5>Nombre</h5></div>
-          <div><h5>Puesto</h5></div>
+          <div><h5 className='bolded bigger'>Nombre</h5></div>
+          <div><h5 className='bolded bigger'>Puesto</h5></div>
         </div>
-        <Associate/>
-        </section>
-
-
-          <button id='plusPartners' onClick={partners}> <img src={plus} alt='Mas' id='Plus'/></button>
-        </section>
-    );
+        <Associate />
+      </section>
+      <button
+        id='plusPartners'
+        onClick={partners}
+      >
+        <img
+          src={plus}
+          alt='Mas'
+          id='Plus'
+        />
+      </button>
+    </section>
+  );
 }

@@ -6,7 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getDoc, doc, updateDoc, deleteDoc } from 'firebase/firestore';
 import { db } from '../../lib/firebaseConfig';
-import { getAuth, deleteUser } from "firebase/auth";
+import { getAuth/*, deleteUser*/ } from "firebase/auth";
 
 
 
@@ -17,6 +17,7 @@ export const EditDeleteAsso = () => {
     const {id} = useParams();
     const auth = getAuth();
     const user = auth.currentUser;
+    console.log(user);
  
     const partners = () =>{
         navigate('/AddPartners')
@@ -90,7 +91,7 @@ export const EditDeleteAsso = () => {
         <button onClick={eliminar} id='baja'>Dar de baja</button>
           <section className='form'>
                 <label className='labelName'>Nombre</label>
-                <input type='text' id='name' placeholder='Ej. Amaya de Esesarte'
+                <input type='text' id='name' placeholder='Ej. Amaya De Esesarte'
                  value={valor.name} onChange ={ (event) =>  {actualizarValor({ ...valor, name: event.target.value })}} />
                 <label className='labelEmail'>Correo</label>
                 <input type='e-mail' id='email' placeholder='Ej. amaya@burgerqueen.com' value={valor.email}/>
