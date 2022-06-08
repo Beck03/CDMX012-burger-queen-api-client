@@ -17,16 +17,17 @@
 #BurgerQueen {
     height: 30%;
     margin-bottom: 5vh;
+    align-self: center;
 }
 
-h2 {
+h2.login-welcome {
     font-size: 35px;
     margin-bottom: 5vh;
 }
 
 #Email {
     width: 50%;
-    height: 3%;
+    height: 6%;
     background: #FFFFFF;
     border-radius: 20px;
     border: none;
@@ -36,7 +37,7 @@ h2 {
 
 .pswrdGroup {
     width: 100%;
-    height: 3%;
+    height: 6%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -52,7 +53,7 @@ h2 {
     border: none;
     padding: 2%;
     z-index: 1;
-    left: 23%;
+    left: 25%;
 }
 
 #mask {
@@ -71,7 +72,7 @@ input {
     font-size: x-large;
 }
 
-p {
+p.p-login {
     width: 50%;
     height: 3%;
     font-size: x-large;

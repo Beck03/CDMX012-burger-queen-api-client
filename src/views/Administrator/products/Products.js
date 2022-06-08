@@ -4,11 +4,13 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import '../products/Products.css';
 import Header from './Header'
 import { Button } from 'reactstrap';
-import ModalBox from './ModalBox';
+import ModalBox from './ModalBox'; 
+import Swal from 'sweetalert2';
+import { FiTrash2 } from 'react-icons/fi'
 
 //falta agregarle el sweetalert para borrado
 
-const Products = () => {
+const Products = ({logOut}) => {
 
   const [products, setProducts] = useState([]);
   const [modalStatus, setModalStatus] = useState(false);
@@ -78,20 +80,35 @@ const Products = () => {
       })
   }
 
+
   const deleteProduct = async (data) => {
-    console.log(data)
     await fetch('http://localhost:3001/productos/' + data.id, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(data)
-  })
-  .then(res => res.json())
-  .then(() => {
-    const newData = [...products];
-    setProducts(newData.filter(info=>info.id!==data.id));
-  });
+    })
+      .then(res => res.json())
+      .then(() => {
+        const newData = [...products];
+        setProducts(newData.filter(info => info.id !== data.id));
+      });
+  }
+
+  const deleteAction = (data) => {
+    Swal.fire({
+      text: '¿Eliminar ' + data.name + '?',
+      showCancelButton: true,
+      confirmButtonColor: '#9291E4',
+      cancelButtonColor: '#9A9AAE',
+      cancelButtonText:'Cancelar' ,
+      confirmButtonText: '  Borrar  ',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteProduct(data)
+      }
+    })
   }
 
 
@@ -110,39 +127,39 @@ const Products = () => {
     toggle2();
   }
 
+
   return (
     <article className='products'>
-      <Header />
+      <Header view={'Asociados'} logOut={logOut} route={'/AddPartners'}/>
       <section className='contents'>
-        <h2>Productos</h2>
-
+        <h2 className='products-header'>Productos</h2>
         <div className='table-responsive product-list'>
-          <table className='table table-striped table-bordered'>
+          <table className='table table-bordered'>
             <thead>
               <tr>
-                <th>#</th>
-                <th>Itemn</th>
-                <th>Precio</th>
-                <th>Categoría</th>
-                <th>Acción</th>
+                <th className='bla'>#</th>
+                <th className='bla'>Itemn</th>
+                <th className='bla'>Precio</th>
+                <th className='bla'>Categoría</th>
+                <th className='bla'>Acción</th>
               </tr>
             </thead>
             <tbody>
               {products && products.map((product) => (
-                <tr key={product.id}>
-                  <th>{product.id}</th>
-                  <td onClick={() => loadData(product)}>{product.name}</td>
+                <tr key={product.id} >
+                  <td className='bolded ble'>{product.id}</td>
+                  <td className='ble' onClick={() => loadData(product)}>{product.name}</td>
                   {/* <td><img alt='bla'src={product.img}/></td> */}
-                  <td>{product.price}</td>
-                  <td>{product.category}</td>
-                  <td onClick={() => deleteProduct(product)}>Borrar</td>
+                  <td className='ble'>{product.price}</td>
+                  <td className='ble'>{product.category}</td>
+                  <td className='trashIcon ble' onClick={() => deleteAction(product)}><FiTrash2 /></td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
 
-        <Button id='plusPartners' onClick={toggle} >
+        <Button id='plusProduct' onClick={toggle} >
           <img
             src={plus}
             alt='Mas'
@@ -162,6 +179,7 @@ const Products = () => {
         category={category}
         defVal=''
         btnText={'Guardar'}
+        modalTitleText={'Agrega un nuevo producto'}
       />
 
       <ModalBox
@@ -174,8 +192,8 @@ const Products = () => {
         category={category}
         defVal={modalInfo}
         btnText={'Editar'}
+        modalTitleText={'Vista de producto'}
       />
-
     </article>
 
   );

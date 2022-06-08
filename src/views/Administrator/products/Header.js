@@ -3,8 +3,12 @@ import icoBurgerQueen from '../../../Components/images/icoBurgerQueen.svg';
 import { useNavigate } from "react-router-dom";
 
 
-const Header = () => {
+const Header = ({view, logOut, route}) => {
   const navigate = useNavigate();
+  const returnHome = () => {
+    logOut();
+    navigate('/');
+  }
   return (
     <article>
       <div className='header'>
@@ -12,12 +16,16 @@ const Header = () => {
           src={icoBurgerQueen}
           alt='Burger Queen'
           id='icoBurgerQueen'
-          onClick={() => navigate('/')}
         />
         <button
           className='employees'
-          onClick={() => navigate('/AddPartners')}
-        >Asociados
+          onClick={() => navigate(route)}
+        >{view}
+        </button>
+        <button
+          className='log-out'
+          onClick={returnHome}
+        >Log Out
         </button>
       </div>
     </article>

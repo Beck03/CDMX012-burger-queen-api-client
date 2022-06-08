@@ -1,11 +1,13 @@
-import icoBurgerQueen from '../../../Components/images/icoBurgerQueen.svg';
+// import icoBurgerQueen from '../../../Components/images/icoBurgerQueen.svg';
 import plus from '../../../Components/images/Plus.svg';
 import '../../Administrator/addPartners/AddPartnes.css';
 // import React  from 'react';
 import { useNavigate } from "react-router-dom";
 import { Associate } from '../../../Components/associate/Associate.js';
+import Header from '../products/Header'
 
-export const AddPartners = () => {
+
+export const AddPartners = ({ logOut }) => {
   const navigate = useNavigate();
 
   const partners = () => {
@@ -14,24 +16,14 @@ export const AddPartners = () => {
 
   return (
     <section className='addPartners'>
-      <div className='header'>
-        <img
-          src={icoBurgerQueen}
-          alt='Burger Queen'
-          id='icoBurgerQueen'
-        />
-        <button
-          id='products'
-          onClick={() => navigate('/Products')}
-        >
-          Alimentos
-        </button>
-      </div>
-      <h3>Asociados</h3>
+
+      <Header view={'Productos'} logOut={logOut} route={'/Products'} />
+
+      <h3 className='bolded size-text'>Asociados</h3>
       <section id='listaDeAsociados'>
         <div id='tarjetaCategory'>
-          <div><h5>Nombre</h5></div>
-          <div><h5>Puesto</h5></div>
+          <div><h5 className='bolded bigger'>Nombre</h5></div>
+          <div><h5 className='bolded bigger'>Puesto</h5></div>
         </div>
         <Associate />
       </section>

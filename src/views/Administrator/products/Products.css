@@ -1,41 +1,70 @@
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
 .contents {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
 }
 
 .product-list {
   width: 90%;
-  border: 10px solid pink;
-  /* align-self: center; */
+  position: relative;
+  bottom: 40px;
+  max-height: 65vh;
 }
 
-h2 {
-  align-self: flex-end;
+th,
+td,
+tr {
+  font-size: 23px;
 }
 
-.modal-content {
-  padding: 150px 60px;
+tbody,
+thead {
+  border: 1px solid #F645D4;
 }
 
-.close {
-  font-size: xx-large;
+th.bla {
+  background-color: white;
+  border: 2px solid #F645D4;
+  position: sticky;
+  top: 0;
 }
 
-.add-product {
-  background-color: #F18FDE;
-  color: black;
-  width: 30%;
-  height: 5%;
-  border: none;
-  border-radius: 35px;
-  box-shadow: 0px 5.74143px 5.74143px rgba(0, 0, 0, 0.25);
-  font-family: 'Red Hat Mono', monospace;
-  font-size: 25px;
-  font-weight: bolder;
+td.ble {
+  border-bottom: 0.5px solid #F645D4;
+  /* border-top: 0.5px solid #F645D4; */
+}
+
+.trashIcon {
   text-align: center;
 }
 
-input[type="radio"]:checked {
-  background-color: #FBC72C;
-  border: 2px solid #FBC72C;
+.bolded {
+  font-weight: bold;
+}
+
+h2.products-header {
+  align-self: flex-start;
+  margin-left: 7%;
+  font-weight: bold;
+  font-size: 35px;
+  margin-bottom: 5vh;
+}
+
+#plusProduct {
+  width: 130px;
+  height: 130px;
+  background-color: #F06AD7;
+  border: none;
+  border-radius: 100%;
+  box-shadow: 0px 5.74143px 5.74143px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  top: 87%;
+  left: 81%;
 }

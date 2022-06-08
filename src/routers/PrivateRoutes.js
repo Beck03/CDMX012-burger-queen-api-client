@@ -32,9 +32,9 @@ const PrivateRoutes = () => {
     return (
       <Routes>
         <Route path='/' element={<HomeAdm logOut={logOut} />} />
-        <Route path='/AddPartners' element={<AddPartners />} />
+        <Route path='/AddPartners' element={<AddPartners logOut={logOut}/>} />
         <Route path='/RecordAsso' element={<RecordAsso />} />
-        <Route path='/Products' element={<Products />} />
+        <Route path='/Products' element={<Products logOut={logOut}/>} />
         <Route path='/EditDeletAsso/:id' element={<EditDeleteAsso/>} />
       </Routes>
     )
