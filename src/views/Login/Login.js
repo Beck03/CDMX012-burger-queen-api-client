@@ -44,13 +44,13 @@ const Login = ({ signIn }) => {
   }
 
   return (
-    <section className='Login'>
+    <article className='Login'>
       <img
         src={burgerQueen}
         alt='Burger Queen logo'
         id='BurgerQueen'
       />
-      <h2>Bienvenido</h2>
+      <h2 className="login-welcome">Bienvenido</h2>
       <input
         type='email'
         id='Email'
@@ -75,7 +75,7 @@ const Login = ({ signIn }) => {
           />
         </button>
       </section>
-      <p data-testid='errorMessage'>
+      <p data-testid='errorMessage' className="p-login">
         {message}
       </p>
       <button
@@ -83,7 +83,7 @@ const Login = ({ signIn }) => {
         onClick={access}>
         Ingresar
       </button>
-    </section>
+    </article>
   );
 }
 

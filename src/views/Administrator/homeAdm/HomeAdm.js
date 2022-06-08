@@ -4,7 +4,7 @@ import burgerQueen from '../../Login/images/burgerQueen.svg'
 import '../homeAdm/homeAdm.css';
 import { useNavigate } from "react-router-dom";
 
-export const HomeAdm = ({ logOut }) => {
+export const HomeAdm = ({logOut}) => {
   const navigate = useNavigate();
 
   const partners = () => {
@@ -17,19 +17,20 @@ export const HomeAdm = ({ logOut }) => {
         src={burgerQueen}
         alt='Burger Queen logo'
         id='BurgerQueen'
+        onClick={logOut}
       />
       <h2>Gerencia</h2>
       <button
         id='btnProducts'
-        onClick={logOut}
-      >
-        Salir
-      </button>
-      <button
-        id='btnAssociates'
         onClick={partners}
       >
         Asociados
+      </button>
+      <button
+        id='btnAssociates'
+        onClick={() => navigate('/Products')}
+      >
+        Productos
       </button>
     </section>
   );
