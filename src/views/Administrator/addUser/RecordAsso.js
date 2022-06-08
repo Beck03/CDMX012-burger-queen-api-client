@@ -20,7 +20,6 @@ export const RecordAsso = () => {
     }
 
     const originalUser = auth.currentUser;
-    console.log(originalUser);
 
 async function registerAssociate (email, password, name, age, phone, date, contEmergency, contract, time, job){
     
@@ -75,7 +74,7 @@ async function registerAssociate (email, password, name, age, phone, date, contE
         <section className='RecordAsso'>
            <div className='header'>
 
-             <img src={icoBurgerQueen} alt='Burger Queen' id='icoBurgerQueen'/>
+             <img src={icoBurgerQueen} alt='Burger Queen Logo' id='icoBurgerQueen'/>
              <button id='back' onClick={partners}><img src={back} alt='Volver' id='backImg'/></button>
 
            </div>
